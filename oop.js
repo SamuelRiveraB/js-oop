@@ -104,3 +104,17 @@ const person4 = {
 };
 
 console.log(person1, person2.hi(), person3.hi(), person4.hi());
+
+class Ogre extends ElfClass {
+  constructor(name, weapon, type, color) {
+    super(name, weapon);
+    this.type = type;
+    this.color = color;
+  }
+  makeFort() {
+    return "Strongest fort in the world made";
+  }
+}
+
+const shrek = new Ogre("Shrek", "stench", "swamp", "green");
+console.log(shrek.makeFort());
