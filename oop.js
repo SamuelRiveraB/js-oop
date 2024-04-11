@@ -46,3 +46,19 @@ Elf.prototype.attack = function () {
 
 const luke = new Elf("Luke", "saber");
 console.log(luke.attack());
+
+// Classes
+
+class ElfClass {
+  constructor(name, weapon) {
+    this.name = name;
+    this.weapon = weapon;
+  }
+  attack() {
+    return "Attack with " + this.weapon;
+  }
+}
+
+const mia = new ElfClass("Mia", "shield");
+console.log(mia.attack());
+console.log(mia instanceof ElfClass);
