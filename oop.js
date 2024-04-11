@@ -62,3 +62,45 @@ class ElfClass {
 const mia = new ElfClass("Mia", "shield");
 console.log(mia.attack());
 console.log(mia instanceof ElfClass);
+
+// This
+
+// New binding
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const person1 = new Person("Xavier", 55);
+
+// Implicit binding
+const person2 = {
+  name: "Karen",
+  age: 40,
+  hi() {
+    console.log("Hi " + this.name);
+  },
+};
+
+// Explicit binding
+const person3 = {
+  name: "Karen",
+  age: 40,
+  hi: function () {
+    console.log("Hi " + this.setTimeout);
+  }.bind(globalThis),
+};
+
+// Arrow function
+const person4 = {
+  name: "Karen",
+  age: 40,
+  hi: function () {
+    var inner = () => {
+      console.log("Hi " + this.name);
+    };
+    return inner();
+  },
+};
+
+console.log(person1, person2.hi(), person3.hi(), person4.hi());
