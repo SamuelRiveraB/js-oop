@@ -1,4 +1,5 @@
 // Factory functions
+
 function createElf(name, weapon) {
   return {
     name,
@@ -31,3 +32,17 @@ function createElfObj(name, weapon) {
 
 const matt = createElfObj("Matt", "sword");
 console.log(matt.attack());
+
+// Constructor functions
+
+function Elf(name, weapon) {
+  this.name = name;
+  this.weapon = weapon;
+}
+
+Elf.prototype.attack = function () {
+  return "Attack with " + this.weapon;
+};
+
+const luke = new Elf("Luke", "saber");
+console.log(luke.attack());
